@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Control de Gastos</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="/TP/Styles/grafico.css">
+  <link rel="icon" href="https://i.postimg.cc/5NLrTkKM/image-n-U-rg-Vq-A8-XUs-XLm-PEGm-YS-Photoroom.png" type="image/png">
+</head>
+<body>
+    <header>
+    <div class="logo">
+      <a href="#" class="logo2"><img src="https://i.postimg.cc/5NLrTkKM/image-n-U-rg-Vq-A8-XUs-XLm-PEGm-YS-Photoroom.png" alt="MiLogo" width="55" height="55"><span class="logo">Empresa CAOS</span></a>
+    </div>
+    <div class="btn">
+      <a href="/TP/Html/TP.html" class="btn3-3">Inicio</a>
+      <a href="/TP/Html/INFORMACION.html" class="btn3-3">Información</a>
+      <a href="/TP/Html/login2.html" class="btn1-1">Inicia sesion</a>
+      <a href="/TP/Html/REGISTRO.html" class="btn2-2">Registrate</a>
+    </div>
+    <div class="idioma">
+      <select class="idioma-select">
+          <option value="es" onclick="location.href='galeria.html'"> 🇪🇸 Español</option>
+          <option value="en" onclick="location.href='fdf.html'">🇺🇸 Ingles</option>
+      </select>
+    </div>
+  </header>
+  <marquee behavior="scroll" direction="left" class="mensaje">
+   📍 Bienvenido a nuestra página CAOS, donde encontrarás una amplia variedad de servicios para tu control de gastos. ¡Explora nuestras categorías y empieza! ⚖️
+  </marquee>
+  <div class="resumen">
+    <h1>Ganancias</h1>
+    <div class="grafico">
+        <h2>Resumen por Categorías</h2>
+        <canvas id="graficoGanancias" width="300" height="300"></canvas>
+    </div>
+    <div class="datos">
+        <div class="total" id="totalGanancias">Total Ganancias: $0.00</div>
+        <div class="leyenda" id="leyenda_ganancias"></div>
+        
+        <h3>Modificar Categorías</h3>
+        <div class="formulario">
+        <input type="number" id="monto_gan" placeholder="Monto en $">
+        <select id="categorias_ganancias">
+            <option value="Sueldo">Sueldo</option>
+            <option value="Ahorro">Ahorro</option>
+            <option value="Deposito">Deposito</option>
+            <option value="Otros">Vivienda</option>
+        </select>
+        <div class="botones">
+            <button onclick="modificarGanancias('+')" class="mas">+</button>
+            <button onclick="modificarGanancias('-')" class="menos">-</button>
+        </div>
+        </div>
+    </div>
+  </div>
+
+
+  
+    <div class="resumen">
+        <h1>Gastos</h1>
+        <div class="grafico">
+            <h2>Resumen por Categorías</h2>
+            <canvas id="graficoGastos" width="300" height="300"></canvas>
+        </div>
+        <div class="datos">
+            <div class="total" id="totalGastos">Total: $0.00</div>
+            <div class="leyenda" id="leyenda_gastos"></div>
+            
+            <h3>Modificar Categorías</h3>
+            <div class="formulario">
+            <input type="number" id="monto_gas" placeholder="Monto en $">
+            <select id="categorias_gastos">
+                <option value="Vivienda">Vivienda</option>
+                <option value="Ropa">Ropa</option>
+                <option value="Necesidades">Necesidades</option>
+                <option value="Accesorios">Accesorios</option>
+                <option value="Electrodomesticos">Electrodomesticos</option>
+                <option value="Salud">Salud</option>
+                <option value="Muebles">Muebles</option>
+                <option value="Seguro">Seguro</option>
+                <option value="Impuestos">Impuestos</option>
+                <option value="Comida">Comida</option>
+            </select>
+            <div class="botones">
+                <button onclick="modificarGastos('+')" class="mas">+</button>
+                <button onclick="modificarGastos('-')" class="menos">-</button>
+            </div>
+            </div>
+        </div>
+        
+    </div>
+  
+<h2 class="total" id="balance">Tu balance es de: $0.00</h2>
+<button onclick="descargarPDF()" class="descargar">Descargar PDF</button>
+<script src="/TP/JavaScript/grafico.js"></script>
+
+</body>
+<footer>
+    <h3>Creadores:</h3>
+    <div class="contactos">
+      <div class="creador">
+        <h4>Santiago Guebara</h4>
+        <h5>+54 9 3413 25-0853</h5>
+      </div>
+      <div class="creador">
+        <h4>Carla Bertero</h4>
+        <h5>+54 9 3416 51-1494</h5>
+      </div>
+      <div class="creador">
+        <h4>Alan verón</h4>
+        <h5>+54 9 3416 92-3641</h5>
+      </div>
+      <div class="creador">
+        <h4>Octavio Guardamagna</h4>
+        <h5>+54 9 3402 52-7197</h5>
+      </div>
+    </div>
+</footer>
+</html>
+
+
+
