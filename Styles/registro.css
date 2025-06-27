@@ -1,0 +1,132 @@
+       * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(0deg, #0000000c, #00000009), url(https://wallpapers.com/images/hd/finance-digital-blue-graph-3rpv84d278m83dx1.jpg);
+      display: flex;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      justify-content: center;
+      align-items: center;
+    }
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5em;
+    }
+    .error-message {
+        color: #d32f2f;
+        font-size: 0.9em;
+        margin-top: 0.25em;
+        min-height: 1.2em;
+    }
+    body, html {
+      overflow: auto;
+      scrollbar-width: none; 
+    }
+    .formulario 
+    {  
+      background-color: #00000027;
+      padding: 32px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 16px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .formulario h2 
+    {
+      text-align: center;
+      margin-bottom: 24px;
+      font-size: 30px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .input-group {
+      position: relative;
+      display: flex;
+      margin-bottom: 24px;
+    }
+
+    .input {
+      width: 100%;
+      padding: 16px 10px;
+      border: 1px solid #ccc;
+      background-color: #ff000000;
+      border-radius: 5px;
+      color: white;
+      outline: none;
+      font-size: 15px;
+      transition: border-color 0.3s;
+    }
+
+    .input:focus {
+      border-color: #ffffff;
+    }
+
+    .placeholder {
+      position: absolute;
+      top: 30%;
+      left: 7px;
+      background-color: #ffffff00;
+      color: #ffffff;
+    }
+
+    .input:focus + .placeholder,
+    input:not(:placeholder-shown) + .placeholder 
+    {
+      top: -13px;
+      left: 10px;
+      font-size: 15px;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      font-weight: bold;
+    }
+    .input[type="date"]
+    {
+        color: white;
+    }
+    .error-message {
+      color: red;
+      font-size: 13px;
+      margin-top: 5px;
+      display: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 7px;
+      background-color: #5f66ee;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #1d239b;
+    }
+    a
+    {
+        color: #858bff;
+        text-decoration: none;
+    }
+    p
+    {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 16px;
+    }
+    

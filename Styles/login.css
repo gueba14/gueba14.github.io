@@ -1,0 +1,147 @@
+* 
+    {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body,html
+    {
+    overflow: auto;
+    scrollbar-width: none; 
+    }
+    body 
+    {
+    height: 100vh;
+    background: linear-gradient(0deg, #00000009, #00000009), url(https://wallpapers.com/images/hd/finance-digital-blue-graph-3rpv84d278m83dx1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .formulario 
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 32px;
+        border-radius: 10px;
+        width: 100%;
+        box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+        max-width: 400px;
+        background-color: rgba(0, 0, 0, 0.212); 
+    }
+
+    .input-group 
+    {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+        margin-bottom: 24px;
+    }
+
+    .formulario h2 
+    {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 30px;
+    color: #ffffff;
+    }
+
+    .input 
+    {
+    padding: 16px 10px 6px 10px;
+    width: 100%;
+    padding: 16px 10px;
+    border: 1px solid #ffffff;
+    transition: border-color 0.3s;
+    border-radius: 10px;
+    outline: none;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 15px;
+    }
+
+    .input:focus 
+    {
+    border-color: #ffffff;
+    }
+
+    .placeholder 
+    {
+    position: absolute;
+    top: 30%;
+    left: 7px;
+    background-color: #ffffff00;
+    color: #ffffff;
+    transition: 0.3s;
+    }
+
+    .input:focus + .placeholder,
+    input:not(:placeholder-shown) + .placeholder 
+    {
+    top: -13px;
+    left: 10px;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: bold;
+    }
+
+    .error-message 
+    {
+    color: red;
+    font-size: 13px;
+    }
+
+    button 
+    {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #5f66ee;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    }
+
+    button:hover 
+    {
+    background-color: #1d239b;
+    }
+
+    p
+    {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 16px;
+    }
+    
+    p.con
+    {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 16px;
+    left: -32px;
+    position: relative;
+    margin-top: -14px;
+    padding-bottom: 15px;
+    padding-top: 0px;
+    margin-bottom: 12px;
+    }
+    
+    a 
+    {
+    color: #9196ff;
+    text-decoration: none;
+    }
