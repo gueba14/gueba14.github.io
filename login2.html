@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar Sesión</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="/TP/Styles/login.css" />
+</head>
+<body>
+  <form method="post" action="/login" class="formulario" id="loginForm">
+    <h2>Iniciar Sesión</h2>
+    <div class="input-group">
+      <input type="text" name="username" id="username" class="input" placeholder=" " required />
+      <label for="username" class="placeholder">Usuario</label>
+      <span id="error-username" class="error-message"></span>
+    </div>
+    <div class="input-group">
+      <input type="password" name="password" id="password" class="input" placeholder=" " required />
+      <label for="password" class="placeholder">Contraseña</label>
+      <span id="error-password" class="error-message"></span>
+    </div>
+ <p class="con">¿Olvidaste tu contraseña? <a href="#">Haz clic aquí</a></p>
+    <button type="submit">Iniciar Sesión</button>
+    <p>¿No tienes una cuenta? <a href="/TP/REGISTRO.html" target="_blank">Regístrate aquí</a></p>
+  </form>
+  <script src="/TP/JavaScript/login.js" defer></script>
+</body>
+
+</html>
