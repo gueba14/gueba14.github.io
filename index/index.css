@@ -337,7 +337,9 @@ nav.nav
 
     .mensaje 
     {
-      display: none;
+      
+      display: block;
+      
       animation: fadeIn 0.5s ease-in-out;
     }
 
