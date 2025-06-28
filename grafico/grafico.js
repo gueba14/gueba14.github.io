@@ -304,7 +304,7 @@ btnHamburguesa.addEventListener('click', () => {
 });
 window.onscroll = function() {
   const btn = document.getElementById("btn-Subir");
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) 
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)
   {
     btn.style.display = "block";
   } else 
