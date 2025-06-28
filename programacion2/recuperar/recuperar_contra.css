@@ -1,0 +1,93 @@
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ :root
+ {
+    --color-1: #60aaff; 
+    --color-2: #2e57df; 
+ }
+    
+    *
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body
+    {
+        background: linear-gradient(0deg, #00000009, #00000009), url("https://universidadeuropea.com/resources/media/images/estudiar-finanzas-800x450.width-1024.format-webp.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    form
+    {
+        border-radius: 15px;
+        backdrop-filter: blur(5px);
+        padding: 23px 23px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        width: 100%;
+        max-width: 400px;
+    }
+
+    h2
+    {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #ffffff;
+    }
+
+    label
+    {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #ffffff;
+    }
+
+    input[type="email"]
+    {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1.2rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 1rem;
+    }
+
+    button
+    {
+        width: 100%;
+        padding: 0.8rem;
+        background-color: var(--color-1);
+        color: white;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    button:hover
+    {
+        background-color: var(--color-2);
+    }
+
+    .message
+    {
+        margin-top: 1rem;
+        text-align: center;
+        font-size: 0.95rem;
+        color: #e53935;
+    }
+
+    .success
+    {
+        color: var(--color-1);
+    }
