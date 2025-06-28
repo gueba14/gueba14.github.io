@@ -347,30 +347,24 @@ nav.nav
     {
       display: block;
     }
-    .mensaje-img 
-    {
+    .mensaje-img {
       display: block;
-      max-width: 90%;
+      max-width: 90vw;
+      width: 100%;
       height: auto;
       margin: 0 auto;
-      border-radius: 16px;     
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      object-fit: contain;      
-      background: #fff;        
-      padding: 8px;            
+      border-radius: 16px;      /* Opcional: bordes redondeados */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Opcional: sombra */
+      object-fit: contain;
+      background: #fff;         /* Opcional: fondo blanco */
+      padding: 8px;             /* Espacio para que no toque los bordes */
     }
-    .mensaje p
-    {
-      color: #000000;
-      font-size: 25px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: -297px;
-      margin-bottom: -35px;
-      height: 100%;
-      width: 100%;
-      text-align: center;
+
+    @media screen and (max-width: 768px) {
+      .mensaje-img {
+        max-width: 98vw;
+        padding: 4vw;
+      }
     }
     @keyframes fadeIn 
     {
