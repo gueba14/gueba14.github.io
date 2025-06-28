@@ -11,7 +11,155 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="contactos.css"/>
 </head>
+<style>
+  @media screen and (max-width: 768px) 
+{
+    .btn 
+    {
+      display: none;
+      flex-direction: column;
+      background-color: #f0f0f0;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      width: 200px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    #btn-hamburguesa 
+    {
+      display: block;
+      
+    }
+    .btn.activo 
+    {
+      display: flex;
+      flex-direction: column;
+      background-color: #f0f0f0;
+      position: absolute;
+      top: 60px;
+      right: 0.2px;
+      border: 1px solid #ccc;
+      gap: 10px;
+    }
+    .logo .logo2
+    {
+      display: flex;
+      align-items: center;
+      position: relative;
+      justify-content: center;
+      top: 10px;
+    }
+    .fa.fa-bars
+    {
+      position: relative;
+      top: 10px;
+      right: 10px;
+    }
+    .footer-fila-1 
+  {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
+  .logo-footer,
+  .footer-redes,
+  .footer-contacto 
+  {
+    flex: none;
+    width: 100%;
+  }
+  .MiLogo
+  {
+    margin-left: 111px;
+    margin-bottom: -135px;
+  }
+  .footer-redes
+  {
+    margin-top: 40px;
+    margin-right: 40px;
+  }
+  .redes
+  {
+    padding-left: 0px;
+    margin-top: -84px;
+  }
+  .footer-contacto 
+  {
+    align-items: center;
+    padding-right: 0;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .h2-contacto 
+  { 
+    margin-top: 30px;
+    padding-right: 0;
+  }
+
+  .logo-titulo 
+  {
+    margin-right: 0;
+  }
+  span.whatsapp-text
+  {
+    display: none;
+  }
+  .whatsapp-float 
+  {
+      position: fixed;
+      width: 50px;
+      height: 50px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #3be02c;
+      color: rgb(255, 253, 253);
+      border-radius: 50%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease;
+  }
+
+  .whatsapp-float i.fa-brands.fa-whatsapp 
+  {
+      width: 30px;
+      height: 37px;
+      text-align: center;
+      font-size: 30px;
+  }
+
+  .footer-a 
+  {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 16px;
+  }
+  span.barras-politicas
+  {
+    display: none;
+  }
+
+  .footer-a a 
+  {
+    margin-bottom: 10px;
+  }
+
+  .footer-fila-2 
+  {
+    font-size: 13px;
+    margin-top: 15px;
+    padding: 10px;
+  }
+}
+</style>
 <body>
   
 <hr class="header-hr" data-aos="fade-down">
