@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  <link rel="stylesheet" href="registro.css" />
+</head>
+<body>
+  <form method="post" class="formulario" id="registerForm" novalidate>
+    <h2>Registro</h2>
+
+    <div class="input-group">
+      <input type="text" id="username" name="username" class="input" placeholder=" " required />
+      <label for="username" class="placeholder">Nombre de usuario</label>
+      <span id="error-username" class="error-message"></span>
+    </div>
+
+    <div class="input-group">
+      <input type="email" id="correo" name="email" class="input" placeholder=" " required />
+      <label for="correo" class="placeholder">Correo electrónico</label>
+      <span id="error-correo" class="error-message"></span>
+    </div>
+
+    <div class="input-group">
+      <input type="date" id="fecha" name="fecha" class="input" placeholder=" " required />
+      <label for="fecha" class="placeholder">Fecha de nacimiento</label>
+      <span id="error-fecha" class="error-message"></span>
+    </div>
+    <div class="input-group">
+      <select id="genero" name="genero" class="input" required>
+        <option value="Genero" disabled selected>----- Selecciona tu género -----</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+        <option value="Otro">Otro</option>
+        <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+      </select>
+      <span id="error-genero" class="error-message"></span>
+    </div>
+    <div class="input-group">
+      <input type="password" id="password" name="password" class="input" placeholder=" " required />
+      <label for="password" class="placeholder">Contraseña</label>
+      <span id="error-password" class="error-message"></span>
+    </div>
+
+    <div class="input-group">
+      <input type="password" id="password2" name="password2" class="input" placeholder=" " required />
+      <label for="password2" class="placeholder">Confirmar contraseña</label>
+      <span id="error-password2" class="error-message"></span>
+    </div>
+    <div class="input-group">
+      <input type="checkbox" id="terminos" name="terminos" class="input_terminos" required />
+      <label for="terminos" class="placeholder_terminos">Acepto los <a href="#" style="color: rgb(0, 0, 0);backdrop-filter: blur(3px);">términos y condiciones</a></label>
+      <span id="error-terminos" class="error-message"></span>
+    </div>
+    <button type="submit">Registrar</button>
+    <p class="con">¿Ya tienes una cuenta? <a href="/login/login.html">Inicia sesión</a></p>
+  </form>
+
+  <script src="registro.js" defer></script>
+</body>
+</html>
