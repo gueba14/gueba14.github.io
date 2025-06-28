@@ -10,7 +10,7 @@ conexion = mysql.connector.connect(
     database="Sistemas_usuarios"      
 )
 
-@app.route('registrar', methods=['POST'])
+@app.route('/registrar', methods=['POST'])
 def registrar_usuario():
     datos = request.get_json()
     nombre_usuario = datos.get('usuario')
