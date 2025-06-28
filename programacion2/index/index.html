@@ -15,7 +15,202 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 </head>
+<style>
+  @media screen and (max-width: 768px) 
+{
+    .btn 
+    {
+      display: none;
+      flex-direction: column;
+      background-color: #f0f0f0;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      width: 200px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    #btn-hamburguesa 
+    {
+      display: block;
+      padding-right: 20px;
+      
+    }
+    .btn.activo 
+    {
+      display: flex;
+      flex-direction: column;
+      background-color: #f0f0f0;
+      position: absolute;
+      top: 60px;
+      right: 0.2px;
+      border: 1px solid #ccc;
+      gap: 10px;
+    }
+    #btn-Subir 
+    {
+      display: none; 
+      position: fixed;
+      bottom: 70px;
+      right: 20px;
+      z-index: 99;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
 
+    #btn-Subir img 
+    {
+      width: 40px;
+      height: auto;
+      transition: transform 0.3s;
+    }
+
+    #btn-Subir:hover img 
+    {
+      transform: scale(1.1);
+    }
+  .logo .logo2
+    {
+      display: flex;
+      align-items: center;
+      position: relative;
+      justify-content: center;
+      top: 10px;
+    }
+      span.logo
+    {
+      font-size: 21px;
+      text-transform: capitalize;
+      font-weight: 600;
+      color: #000000;
+      background: linear-gradient(90deg, #ff4d4d, #2b2bff);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .fa.fa-bars
+    {
+      position: relative;
+      top: 10px;
+      right: 10px;
+    }
+    .footer-fila-1 
+  {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo-footer,
+  .footer-redes,
+  .footer-contacto 
+  {
+    flex: none;
+    width: 100%;
+  }
+  .MiLogo
+  {
+    margin-left: 111px;
+    margin-bottom: -135px;
+  }
+  .footer-redes
+  {
+    margin-top: 40px;
+    margin-right: 40px;
+  }
+  .redes
+  {
+    padding-left: 0px;
+    margin-top: -84px;
+  }
+  .footer-contacto 
+  {
+    align-items: center;
+    padding-right: 0;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .h2-contacto 
+  { 
+    margin-top: 30px;
+    padding-right: 0;
+  }
+
+  .logo-titulo 
+  {
+    margin-right: 0;
+  }
+  span.whatsapp-text
+  {
+    display: none;
+  }
+  .whatsapp-float 
+  {
+      position: fixed;
+      width: 50px;
+      height: 50px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #3be02c;
+      color: rgb(255, 253, 253);
+      border-radius: 50%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease;
+  }
+
+  .whatsapp-float i.fa-brands.fa-whatsapp 
+  {
+      width: 30px;
+      height: 37px;
+      text-align: center;
+      font-size: 30px;
+  }
+
+  .footer-a 
+  {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 16px;
+  }
+  span.barras-politicas
+  {
+    display: none;
+  }
+
+  .footer-a a 
+  {
+    margin-bottom: 10px;
+  }
+
+  .footer-fila-2 
+  {
+    font-size: 13px;
+    margin-top: 15px;
+    padding: 10px;
+  }
+  button.btn-anterior, button.btn-siguiente 
+  {
+    background-color: #000000;
+    border: none;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    color: #ffffff;
+    font-size: 23px;
+    cursor: pointer;
+  }
+}
+</style>
 <body>
   
 <hr class="header-hr" data-aos="fade-down">
