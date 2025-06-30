@@ -10,7 +10,7 @@ Pasos para poder Probar la pagina:
 
 5-Activar el Virtual Environment usando el comando: "__________\Scripts\activate".
 
-6-Se necesitan las librerias "Flask" y "flask-mysqldb", tendras que instalarlas por medio de del commando: "pip install Flask flask-mysqldb".
+6-Se necesitan las librerias "Flask", "flask-mysqldb" y "bcrypt", tendras que instalarlas por medio de del commando: "pip install Flask flask-mysqldb bcrypt".
 
 7-Correr el commando "python .\scr\app.py" para empezar a hostear localmente la app.
 
