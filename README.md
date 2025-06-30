@@ -4,7 +4,7 @@ Pasos para poder Probar la pagina:
 
 2-Correr el script "Login Database.sql" para crear la base de datos y sus tablas necesarias para guardar y buscar los usuarios registrados.
 
-3-Habra la barra de comandos de visual studio.
+3-Habra la barra de comandos de visual studio(Progama Sugerido).
 
 4-Crea un Virtual Environment usando el comando: "py -3 -m venv __________" <--- Ingrese el nombre de su Virtual Environment.
 
