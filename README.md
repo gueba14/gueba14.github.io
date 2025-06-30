@@ -1,25 +1,15 @@
-📊 Toma el control de tus finanzas personales. Organizá tus ingresos y gastos de manera clara, sin complicaciones, desde un solo lugar.
-
-⚡ Registra tus gastos e ingresos en segundos. La interfaz es tan simple que no necesitás experiencia previa para comenzar a usarla.
-
-📱 Accedé desde cualquier dispositivo. No tenés que descargar nada. Ingresá desde tu navegador y tus datos estarán sincronizados.
-
-🔒 Tus datos están protegidos. Usamos protocolos de seguridad para mantener tu información privada y segura en todo momento ya que no guardamos tus datos financieros.
-
-📈 Visualizá tu evolución financiera. Con gráficos interactivos podrás analizar tus hábitos y mejorar tu economía mes a mes.
-
-🎯 Planificá y alcanzá tus metas. Establecé objetivos de ahorro y observá tu progreso. Nuestra plataforma te ayuda a mantenerte enfocado.
-
-🤝 Pensado para vos. Ya seas estudiante, trabajador independiente o simplemente alguien que quiere entender en qué se le va la plata, CAOS se adapta a tu realidad.
-
 Pasos para poder Probar la pagina:
 
-1-Habra la barra de comandos de visual studio
+1-Crear un servidor SQL local en el dispositivo
 
-2-Crea un Virtual Environment usando el comando: py -3 -m venv __________ <--- Ingrese el nombre de su Virtual Environment
+2-Correr el script "Login Database.sql" para crear la base de datos y sus tablas necesarias
 
-3-Activar el Virtual Environment usando el comando: __________\Scripts\activate
+3-Habra la barra de comandos de visual studio
 
-4-Crear un servidor SQL local en el dispositivo
+4-Crea un Virtual Environment usando el comando: py -3 -m venv __________ <--- Ingrese el nombre de su Virtual Environment
 
-5-Correr el script del archivo
+5-Activar el Virtual Environment usando el comando: __________\Scripts\activate
+
+6-Correr el commando "python .\scr\app.py" para empezar a hostear localmente la app
+
+7-Habrir la ip que se mostro en la barra de commandos y usarla en un navegador, ejemplo: http://127.0.0.1:5000/
