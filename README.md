@@ -21,36 +21,67 @@ Sistema web para la gestión de gastos y ganancias y tambien graficación. Permi
 - API REST para operaciones CRUD
 ##  Estructura del proyecto
 📁 TP/
+
 ├── app.py
+
 ├── 📁 static/
+
 │ ├── 📁 img/
+
 │ ├── ayuda.css
+
 │ └── contactos.css
+
 │ └── cookies.css
+
 │ └── grafico.css
+
 │ └── grafico.js
+
 │ └── index.css
+
 │ └── index.js
+
 │ └── informacion.css
+
 │ └── login.js
+
 │ └── menu.js
+
 │ └── privacidad.css
+
 │ └── registro.js
+
 │ └── style.css
+
 │ └── style2.css
+
 │ └── terminos.css
+
 ├── 📁 templates/ # (HTML si usás Jinja2 con Flask)
+
 │ └── ayuda.html
+
 │ └── contacto.html
+
 │ └── grafico.html
+
 │ └── index.html
+
 │ └── informacion.html
+
 │ └── login.html
+
 │ └── Politica_cookies.html
+
 │ └── privacidad.html
+
 │ └── register.html
+
 │ └── terminos.html
+
 ├── requirements.txt
+
 └── README.md
 
 ##  Instalación y ejecución
