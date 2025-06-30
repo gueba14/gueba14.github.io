@@ -7,7 +7,7 @@
   <title>Gestión CAOS - Control de Gastos Personales</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="grafico.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='grafico.css') }}">
   <!--======== ICONO =======-->
   <link rel="icon" href="https://i.postimg.cc/5NLrTkKM/image-n-U-rg-Vq-A8-XUs-XLm-PEGm-YS-Photoroom.png" type="image/png">
 <style>
@@ -201,7 +201,7 @@
 </head>
 
 <body>
-  
+
 <hr class="header-hr" data-aos="fade-down">
 <header class="header" data-aos="fade-down">
     <div class="logo">
@@ -216,11 +216,13 @@
   </button>
 
   <div class="btn" id="menu-navegacion">
-    <a href="/index/index.html" class="btn3-3"  id="menu-inicio">Inicio</a>
-    <a href="/informacion/informacion.html" class="btn3-3" id="menu-info">Información</a>
-    <a href="/contacto/contacto.html" class="btn3-3" id="menu-contacto">Contacto</a>
-    <a href="/login/login.html" class="btn1-1" id="menu-inicio-sesion">Inicia sesión</a>
-    <a href="/registro/registro.html" class="btn2-2" id="menu-registro">Regístrate</a>
+    <a href="{{ url_for('index') }}" class="btn3-3"  id="menu-inicio">Inicio</a>
+    <a href="{{ url_for('grafico') }}" class="btn3-3" id="menu-gastos">Gestión CAOS</a>
+    <a href="{{ url_for('contacto') }}" class="btn3-3" id="menu-contacto">Contacto</a>
+    <a href="{{ url_for('informacion') }}" class="btn3-3" id="menu-info">Información</a>
+    <a href="{{ url_for('login') }}" class="btn1-1" id="menu-inicio-sesion">Inicia sesión</a>
+    <a href="{{ url_for('register') }}" class="btn2-2" id="menu-registro">Regístrate</a>
+
     <div class="idioma">
       <select class="idioma-select" onchange="cambiarIdioma(this.value)">
         <option value="es" id="español">🇪🇸 Español</option>
@@ -236,7 +238,14 @@
   <nav class="nav" data-aos="fade-down">
     <a href="https://github.com/gueba14/gueba14.github.io" class="nav-iconos6"><i class="fa-brands fa-github"></i></a>
   </nav>
-  
+<div class="header">
+    <h1 class="word" style="text-align: center;">Bienvenido, {{ session.username }}!</h1>
+</div>
+
+<div class="border">
+    <p class="word">Estas Logeado correctamente.</p>
+    <a class="btn" href="{{ url_for('logout') }}" style="color: red;">Logout</a>
+</div>
   <h1 class="ganancias" id="ganancias"  data-aos="fade-up">Ganancias</h1>
   <div class="resumen" data-aos="fade-up">
     <div class="grafico" data-aos="fade-up">
@@ -404,6 +413,6 @@
 <script>
   AOS.init();
 </script>
-<script src="grafico.js" defer></script>
+<script src="{{ url_for('static', filename='grafico.js') }}" defer></script>
 </body>
 </html>

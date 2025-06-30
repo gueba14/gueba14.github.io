@@ -1,51 +1,6 @@
-const form = document.getElementById('loginForm');
-
-form.addEventListener('submit', async function(e) {
-  e.preventDefault();
-
-  const validoUsuario = validarUsuario();
-  const validoPassword = validarPassword();
-
-  if (!validoUsuario || !validoPassword) {
-    alert('Por favor, corrige los errores antes de enviar el formulario.');
-    return false;
-  } 
-
-  const usuario = document.getElementById('username').value.trim();
-  const contrasena = document.getElementById('password').value;
-
-  try {
-    const respuesta = await fetch('api_login', {
-      method: 'POST',
-      headers: {
-         'Content-Type': 'application/json' 
-        },
-      body: JSON.stringify({
-        username: usuario,
-        password: contrasena
-      })
-    });
-
-    const resultado = await respuesta.json();
-
-    if (resultado.success) 
-    {
-      alert('Inicio de sesión exitoso. Bienvenido ' + usuario);
-      window.location.href = 'grafico.html';
-    } 
-    else 
-    {
-      document.getElementById('error-username').textContent = resultado.message || 'Usuario o contraseña incorrectos';
-    }
-  } catch (error) 
-  {
-    alert('Error al conectar con el servidor.');
-    console.error(error);
-  }
-});
+const form = document.getElementById('registerForm');
 
 function validarUsuario() {
-
   const username = document.getElementById('username').value.trim();
   const errorUsername = document.getElementById('error-username');
 
@@ -67,28 +22,54 @@ function validarUsuario() {
     return false;
   }
 
-  const Caracteres = /[-_]/.test(username);
-  const Letras = /[a-zA-Z]/.test(username);
-  const Numeros = /\d/.test(username);
+  const tieneGuion = /[-_]/.test(username);
+  const tieneLetra = /[a-zA-Z]/.test(username);
+  const tieneNumero = /\d/.test(username);
 
-  if (!Caracteres || !Letras || !Numeros) {
-  
-    
+  if (!tieneLetra || !tieneNumero || !tieneGuion) {
     errorUsername.innerHTML = 
-    'El nombre de usuario debe contener:<br>'+
-      '- letras (mayúsculas o minúsculas)<br>'+
-      '- números<br>'+
+      'El nombre de usuario debe contener:<br>' +
+      '- letras (mayúsculas o minúsculas)<br>' +
+      '- números<br>' +
       '- guiones bajos o guiones medios<br>';
     errorUsername.style.display = 'block';
     return false;
   }
-
 
   errorUsername.textContent = '';
   errorUsername.style.display = 'none';
   return true;
 }
 
+function validarCorreo() {
+  const correo = document.getElementById('correo').value.trim();
+  const error = document.getElementById('error-correo');
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!regex.test(correo)) {
+    error.textContent = 'Correo inválido';
+    error.style.display = 'block';
+    return false;
+  }
+  if (correo.length < 5) {
+    error.textContent = 'Mínimo 5 caracteres';
+    error.style.display = 'block';
+    return false;
+  }
+  if (correo.length > 50) {
+    error.textContent = 'Máximo 50 caracteres';
+    error.style.display = 'block';
+    return false;
+  }
+  if (correo.includes(' ')) {
+    error.textContent = 'No se permiten espacios';
+    error.style.display = 'block';
+    return false;
+  }
+
+  error.style.display = 'none';
+  return true;
+}
 function validarPassword() {
   const password = document.getElementById('password').value;
   const errorPassword = document.getElementById('error-password');
@@ -115,7 +96,6 @@ function validarPassword() {
   const tieneNumero = /\d/.test(password);
   const tieneGuion = /[-_]/.test(password);
 
-
   if (!tieneMinuscula || !tieneNumero || !tieneGuion) {
     errorPassword.innerHTML =
       'La contraseña debe contener:<br>' +
@@ -126,14 +106,18 @@ function validarPassword() {
     return false;
   }
 
-  errorPassword.textContent = 'Contraseña válida';
+  errorPassword.textContent = '';
   errorPassword.style.display = 'none';
   return true;
 }
-const usernameInput = document.getElementById('username');
-const passwordInput = document.getElementById('password');
 
-  usernameInput.addEventListener('blur', validarUsuario);
-  usernameInput.addEventListener('input', validarUsuario);
-  passwordInput.addEventListener('blur', validarPassword);
-  passwordInput.addEventListener('input', validarPassword);
+// Agregar eventos para validación en tiempo real
+document.getElementById('username').addEventListener('blur', validarUsuario);
+document.getElementById('username').addEventListener('input', validarUsuario);
+
+document.getElementById('correo').addEventListener('blur', validarCorreo);
+document.getElementById('correo').addEventListener('input', validarCorreo);
+
+document.getElementById('password').addEventListener('blur', validarPassword);
+document.getElementById('password').addEventListener('input', validarPassword);
+

@@ -9,10 +9,11 @@
   <link rel="icon" href="https://i.postimg.cc/5NLrTkKM/image-n-U-rg-Vq-A8-XUs-XLm-PEGm-YS-Photoroom.png" type="image/png">
   <title>Gestión CAOS</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="informacion.css" />
-  <style>
-      @media screen and (max-width: 768px) 
-  {
+  <link rel="stylesheet" href="{{ url_for('static', filename='contactos.css') }}"/>
+</head>
+<style>
+  @media screen and (max-width: 768px) 
+{
     .btn 
     {
       display: none;
@@ -81,12 +82,110 @@
       top: 10px;
       right: 10px;
     }
+    .footer-fila-1 
+  {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  </style>
-</head>
+  .logo-footer,
+  .footer-redes,
+  .footer-contacto 
+  {
+    flex: none;
+    width: 100%;
+  }
+  .MiLogo
+  {
+    margin-left: 111px;
+    margin-bottom: -135px;
+  }
+  .footer-redes
+  {
+    margin-top: 40px;
+    margin-right: 40px;
+  }
+  .redes
+  {
+    padding-left: 0px;
+    margin-top: -84px;
+  }
+  .footer-contacto 
+  {
+    align-items: center;
+    padding-right: 0;
+    text-align: center;
+    margin-top: 40px;
+  }
 
+  .h2-contacto 
+  { 
+    margin-top: 30px;
+    padding-right: 0;
+  }
+
+  .logo-titulo 
+  {
+    margin-right: 0;
+  }
+  span.whatsapp-text
+  {
+    display: none;
+  }
+  .whatsapp-float 
+  {
+      position: fixed;
+      width: 50px;
+      height: 50px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #3be02c;
+      color: rgb(255, 253, 253);
+      border-radius: 50%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease;
+  }
+
+  .whatsapp-float i.fa-brands.fa-whatsapp 
+  {
+      width: 30px;
+      height: 37px;
+      text-align: center;
+      font-size: 30px;
+  }
+
+  .footer-a 
+  {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 16px;
+  }
+  span.barras-politicas
+  {
+    display: none;
+  }
+
+  .footer-a a 
+  {
+    margin-bottom: 10px;
+  }
+
+  .footer-fila-2 
+  {
+    font-size: 13px;
+    margin-top: 15px;
+    padding: 10px;
+  }
+}
+</style>
 <body>
+  
 <hr class="header-hr" data-aos="fade-down">
 <header class="header" data-aos="fade-down">
     <div class="logo">
@@ -101,11 +200,12 @@
   </button>
 
   <div class="btn" id="menu-navegacion">
-    <a href="/index/index.html" class="btn3-3"  id="menu-inicio">Inicio</a>
-    <a href="/grafico/grafico.html" class="btn3-3" id="menu-gastos">Gestión CAOS</a>
-    <a href="/contacto/contacto.html" class="btn3-3" id="menu-contacto">Contacto</a>
-    <a href="/login/login.html" class="btn1-1" id="menu-inicio-sesion">Inicia sesión</a>
-    <a href="/registro/registro.html" class="btn2-2" id="menu-registro">Regístrate</a>
+    <a href="{{ url_for('index') }}" class="btn3-3"  id="menu-inicio">Inicio</a>
+    <a href="{{ url_for('grafico') }}" class="btn3-3" id="menu-gastos">Gestión CAOS</a>
+    <a href="{{ url_for('contacto') }}" class="btn3-3" id="menu-contacto">Contacto</a>
+    <a href="{{ url_for('informacion') }}" class="btn3-3" id="menu-info">Información</a>
+    <a href="{{ url_for('login') }}" class="btn1-1" id="menu-inicio-sesion">Inicia sesión</a>
+    <a href="{{ url_for('register') }}" class="btn2-2" id="menu-registro">Regístrate</a>
     <div class="idioma">
       <select class="idioma-select" onchange="cambiarIdioma(this.value)">
         <option value="es" id="español">🇪🇸 Español</option>
@@ -113,14 +213,6 @@
       </select>
     </div>
   </div>
-  <!--
-      <div class="idioma">
-        <select class="idioma-select" onchange="cambiarIdioma(this.value)">
-          <option value="es" id="español">🇪🇸 Español</option>
-          <option value="en" id="ingles">🇺🇸 Inglés</option>
-        </select>
-      </div>
-    -->
 </header>
 
 <div class="mensaje-b" data-aos="fade-down">
@@ -128,26 +220,8 @@
 </div>
   <nav class="nav" data-aos="fade-down">
     <a href="https://github.com/gueba14/gueba14.github.io" class="nav-iconos6"><i class="fa-brands fa-github"></i></a>
+    
   </nav>
-
-<section class="info" id="informacion" data-aos="fade-up">
-  <div class="info_text"> 
-    <h1 style="text-align: center;font-size:21px;">Desatando el Potencial Financiero Personal: Una Gestión Sin Esfuerzo</h1>
-    <p>En el corazón de nuestra misión yace el compromiso inquebrantable de <b><mark>empoderar a cada miembro de nuestra estimada base de usuarios</mark></b>, brindándoles una herramienta que va más allá de la mera funcionalidad. Nos dedicamos apasionadamente a la tarea de ofrecer un <b><mark>control financiero personal sin precedentes</mark></b>, transformando lo que a menudo se percibe como una tarea tediosa en una experiencia <b><mark>muy intuitiva, fluida y, sobre todo, gratificante</mark></b>.</p>
-    
-    <p>Imagina un mundo donde la <b><mark> gestión de tus ingresos personales se convierte en un acto de pura simplicidad</mark></b>. Con la asistencia magistral de nuestros servicios de vanguardia, esa visión se materializa. Hemos diseñado meticulosamente una plataforma que no solo te permite <b><mark> administrar tus finanzas de manera rápida</mark></b>, sino que también te invita a un viaje de <b><mark> descubrimiento y claridad económica</mark></b>. Desde la primera interacción, experimentarás una <b><mark> facilidad de uso asombrosa</mark></b>, donde cada función ha sido cuidadosamente pensada para ser tan accesible como poderosa.</p>
-    
-    <p>Nuestra propuesta es una <b><mark> sinfonía de eficiencia y diseño centrado en el usuario</mark> </b>, donde la complejidad inherente a las finanzas se disuelve en una interfaz elegantemente sencilla. No se trata solo de registrar números; se trata de <b><mark> ofrecerte el timón de tu prosperidad</mark> </b>, permitiéndote visualizar, analizar y tomar decisiones informadas sobre tus recursos con una <b><mark> agilidad deslumbrante</mark> </b>. Es la promesa de una <b><mark> gestión financiera que se adapta a tu ritmo de vida</mark></b>, que anticipa tus necesidades y que, en última instancia, te libera para concentrarte en lo que realmente importa. Con nosotros, la capacidad de <b><mark> manejar tus ingresos personales no es solo una función, es una superpotencia</mark> </b> al alcance de tus dedos, respaldada por la excelencia y el soporte continuo de nuestros dedicados servicios.</p>
-    </div>
-</div>
-
-
-
-</section>
-<button id="btn-Subir" title="Volver">
-  <img src="https://i.postimg.cc/wMMhwyH4/freezer-bolsa-Photoroom.png" alt="Volver para arriba" />
-</button>
-<!--
 <section class="formulario-contacto" id="contacto"  data-aos="fade-up" >
   <h2>Contáctanos</h2>
   <form action="https://formspree.io/f/xrbkbave" method="POST" id="contacto-formulario">
@@ -175,11 +249,13 @@
     <button type="submit" class="btn-enviar">Enviar mensaje</button>
   </form>
 </section>
--->
+<button id="btn-Subir" title="Volver">
+  <img src="https://i.postimg.cc/wMMhwyH4/freezer-bolsa-Photoroom.png" alt="Volver para arriba" />
+</button>
   <a href="https://wa.me/5493416923641?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20el%20servicio%20de%20control%20de%20gastos" class="whatsapp-float" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i>
+    <i class="fa-brands fa-whatsapp"></i><span class="whatsapp-text" style="font-size: 13px;">Chatea por Whatsapp</span>
   </a>
-<script src="menu.js" defer></script>
+<script src="{{ url_for('static', filename='menu.js') }}" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init();
