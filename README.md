@@ -88,61 +88,44 @@ Sistema web para la gestión de gastos y ganancias y tambien graficación. Permi
 ### 1. Clonar el repositorio
 
 git clone https://github.com/gueba14/gueba14.github.io
-
 cd proyecto-biblioteca
-
-2. Crear entorno virtual (opcional pero recomendado)
-
+###2. Crear entorno virtual (opcional pero recomendado)
 python -m venv venv
-
 source venv/bin/activate   # en Linux/Mac
-
 venv\Scripts\activate.bat  # en Windows
-
-3. Instalar dependencias
-
+###3. Instalar dependencias
 pip install Flask flask-mysqldb bcrypt
 
-4. Configurar la base de datos
-
+###4. Configurar la base de datos
 Crear una base de datos en MySQL (ejemplo: geeklogin)
-
 Configurar los datos de conexión en app.py
 
 PYthon
 
-# app.py
+app.py
 
 DB_HOST = 'localhost'
-
 DB_USER = 'tu_usuario'
-
 DB_PASSWORD = 'tu_contraseña'
-
 DB_NAME = 'geeklogin'
-
-5. Ejecutar el servidor
-
+###5. Ejecutar el servidor
 bash
-
 python app.py
-
 El sistema estará disponible en: http://127.0.0.1:5000
 
 Cómo probar
-
 Ingresar a http://127.0.0.1:5000
-
 Lee información sobre nuesto proyecto
-
 Registrate para poder utilizar nuestra herramienta para gestion de gastos y ganancias
 
 
 Integrantes del equipo
-
 Octavio Guardamagna
-
 Santiago Guebara
+Alan Verón
+
+📄 Licencia
+Este proyecto fue desarrollado con fines
 
 Alan Verón
 
