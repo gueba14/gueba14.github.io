@@ -1,6 +1,5 @@
 # [CAOS]
 ## Descripción
-(Breve descripción del proyecto, su propósito y funcionalidades principales. Ejemplo:)
 Sistema web para la gestión de gastos y ganancias y tambien graficación. Permite registrar usuarios y tambien logears a través de una interfaz web, conectada a una base de datos MySQL mediante una API desarrollada con Flask.
 ## Tecnologías utilizadas
 ### Frontend
