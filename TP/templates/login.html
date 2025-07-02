@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Login</title>
+</head>
+<body>
+  <form class="formulario" id="loginForm" action="{{ url_for('login') }}" method="post">
+    <h2>Iniciar Sesión</h2>
+    <div>{{ msg }}</div>
+    <div class="input-group">
+      <input type="text" name="username" id="username" class="input" placeholder=" " required />
+      <label for="username" class="placeholder">Usuario</label>
+      <span id="error-username" class="error-message"></span>
+    </div>
+    <div class="input-group">
+      <input type="password" name="password" id="password" class="input" placeholder=" " required />
+      <label for="password" class="placeholder">Contraseña</label>
+      <progress id="password-progress" value="0" max="3"></progress>
+      <span id="error-password" class="error-message"></span>
+    </div>
+    <button type="submit" class="inicio-sesion">Iniciar Sesión</button>
+    <p>¿No tienes una cuenta? <a href="{{ url_for('register') }}">Regístrate aquí</a></p>
+    
+  </form>
+<script src="{{ url_for('static', filename='login.js') }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style2.css') }}">
+    <title>Register</title>
+</head>
+<body>
+  <form class="formulario" id="registerForm" action="{{ url_for('register') }}" method="post">
+    <h2>Registro</h2>
+    <div>{{ msg }}</div>
+    <div class="input-group">
+      <input type="text" id="username" name="username" class="input" placeholder=" " required />
+      <label for="username" class="placeholder">Nombre de usuario</label>
+      <span id="error-username" class="error-message"></span>
+    </div>
+
+    <div class="input-group">
+      <input type="email" id="correo" name="email" class="input" placeholder=" " required />
+      <label for="correo" class="placeholder">Correo electrónico</label>
+      <span id="error-correo" class="error-message"></span>
+    </div>
+
+    <div class="input-group">
+      <input type="password" id="password" name="password" class="input" placeholder=" " required />
+      <label for="password" class="placeholder">Contraseña</label>
+      <progress id="password-progress2" value="0" max="3"></progress>
+      <span id="error-password" class="error-message"></span>
+    </div>
+    <button type="submit">Registrar</button>
+    <p class="con">¿Ya tienes una cuenta? <a href="{{ url_for('login') }}">Inicia sesión</a></p>
+  </form>
+
+  <script src="{{ url_for('static', filename='registro.js') }}" defer></script>
+</body>
+</html>

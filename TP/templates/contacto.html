@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!--libreria AOS (Animate On Scroll) es para que digamos al ir bajando se muestre de a poco el contenido-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="icon" href="https://i.postimg.cc/5NLrTkKM/image-n-U-rg-Vq-A8-XUs-XLm-PEGm-YS-Photoroom.png" type="image/png">
+  <title>Gestión CAOS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='contactos.css') }}"/>
+</head>
+<style>
+  @media screen and (max-width: 768px) 
+{
+    .btn 
+    {
+      display: none;
+      flex-direction: column;
+      background-color: #f0f0f0;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      width: 200px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    #btn-hamburguesa 
+    {
+      display: block;
+      
+    }
+    .btn.activo 
+    {
+      display: flex;
+      flex-direction: column;
+      background-color: #f0f0f0;
+      position: absolute;
+      top: 60px;
+      right: 0.2px;
+      border: 1px solid #ccc;
+      gap: 10px;
+    }
+    #btn-Subir 
+    {
+      display: none; 
+      position: fixed;
+      bottom: 70px;
+      right: 20px;
+      z-index: 99;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    #btn-Subir img 
+    {
+      width: 40px;
+      height: auto;
+      transition: transform 0.3s;
+    }
+
+    #btn-Subir:hover img 
+    {
+      transform: scale(1.1);
+    }
+    .logo .logo2
+    {
+      display: flex;
+      align-items: center;
+      position: relative;
+      justify-content: center;
+      top: 10px;
+    }
+    .fa.fa-bars
+    {
+      position: relative;
+      top: 10px;
+      right: 10px;
+    }
+    .footer-fila-1 
+  {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo-footer,
+  .footer-redes,
+  .footer-contacto 
+  {
+    flex: none;
+    width: 100%;
+  }
+  .MiLogo
+  {
+    margin-left: 111px;
+    margin-bottom: -135px;
+  }
+  .footer-redes
+  {
+    margin-top: 40px;
+    margin-right: 40px;
+  }
+  .redes
+  {
+    padding-left: 0px;
+    margin-top: -84px;
+  }
+  .footer-contacto 
+  {
+    align-items: center;
+    padding-right: 0;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .h2-contacto 
+  { 
+    margin-top: 30px;
+    padding-right: 0;
+  }
+
+  .logo-titulo 
+  {
+    margin-right: 0;
+  }
+  span.whatsapp-text
+  {
+    display: none;
+  }
+  .whatsapp-float 
+  {
+      position: fixed;
+      width: 50px;
+      height: 50px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #3be02c;
+      color: rgb(255, 253, 253);
+      border-radius: 50%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease;
+  }
+
+  .whatsapp-float i.fa-brands.fa-whatsapp 
+  {
+      width: 30px;
+      height: 37px;
+      text-align: center;
+      font-size: 30px;
+  }
+
+  .footer-a 
+  {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 16px;
+  }
+  span.barras-politicas
+  {
+    display: none;
+  }
+
+  .footer-a a 
+  {
+    margin-bottom: 10px;
+  }
+
+  .footer-fila-2 
+  {
+    font-size: 13px;
+    margin-top: 15px;
+    padding: 10px;
+  }
+}
+</style>
+<body>
+  
+<hr class="header-hr" data-aos="fade-down">
+<header class="header" data-aos="fade-down">
+    <div class="logo">
+      <a href="#" class="logo2">
+        <img src="https://i.postimg.cc/5NLrTkKM/image-n-U-rg-Vq-A8-XUs-XLm-PEGm-YS-Photoroom.png" alt="MiLogo" width="55" height="55">
+        <span class="logo" id="menu-logo">gestión CAOS</span>
+      </a>
+    </div>
+
+  <button id="btn-hamburguesa" aria-label="Menú" aria-expanded="false" aria-controls="menu-navegacion">
+    <i class="fa fa-bars" style="font-size:24px;"></i>
+  </button>
+
+  <div class="btn" id="menu-navegacion">
+    <a href="{{ url_for('index') }}" class="btn3-3"  id="menu-inicio">Inicio</a>
+    <a href="{{ url_for('grafico') }}" class="btn3-3" id="menu-gastos">Gestión CAOS</a>
+    <a href="{{ url_for('contacto') }}" class="btn3-3" id="menu-contacto">Contacto</a>
+    <a href="{{ url_for('informacion') }}" class="btn3-3" id="menu-info">Información</a>
+    {% if not session.username %}
+      <a href="{{ url_for('login') }}" class="btn1-1" id="menu-inicio-sesion">Inicia sesión</a>
+      <a href="{{ url_for('register') }}" class="btn2-2" id="menu-registro">Regístrate</a>
+    {% endif %}
+    {% if session.username %}
+    <h2 class="btn1-1" style="text-align: center;">Usuario: {{ session.username }} </h2>
+    <a class="btn2-2" href="{{ url_for('logout') }}" style="color: red;">Logout</a>
+    {% endif %}
+    <div class="idioma">
+      <select class="idioma-select" onchange="cambiarIdioma(this.value)">
+        <option value="es" id="español">🇪🇸 Español</option>
+        <option value="en" id="ingles">🇺🇸 Inglés</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<div class="mensaje-b" data-aos="fade-down">
+  <p>📍 Bienvenido a nuestra página CAOS, donde encontrarás una amplia variedad de servicios para tu control de gastos. ¡Explora nuestras categorías y empieza! ⚖️</p>
+</div>
+  <nav class="nav" data-aos="fade-down">
+    <a href="https://github.com/gueba14/gueba14.github.io" class="nav-iconos6"><i class="fa-brands fa-github"></i></a>
+    
+  </nav>
+<section class="formulario-contacto" id="contacto"  data-aos="fade-up" >
+  <h2>Contáctanos</h2>
+  <form action="https://formspree.io/f/xrbkbave" method="POST" id="contacto-formulario">
+    <div class="campo">
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" required>
+      <span class="error" id="error-nombre"></span>
+    </div>
+
+    <div class="campo">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" required>
+        <span class="error" id="error-correo"></span>
+    </div>
+      <div class="campo">
+        <label for="telefono">Teléfono (opcional)</label>
+        <input type="tel" id="telefono" name="telefono">
+        <span class="error" id="error-telefono"></span>
+      </div>
+      <div class="campo">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        <span class="error" id="error-mensaje"></span>
+    </div>
+    <button type="submit" class="btn-enviar">Enviar mensaje</button>
+  </form>
+</section>
+<button id="btn-Subir" title="Volver">
+  <img src="https://i.postimg.cc/wMMhwyH4/freezer-bolsa-Photoroom.png" alt="Volver para arriba" />
+</button>
+  <a href="https://wa.me/5493416923641?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20el%20servicio%20de%20control%20de%20gastos" class="whatsapp-float" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i><span class="whatsapp-text" style="font-size: 13px;">Chatea por Whatsapp</span>
+  </a>
+<script src="{{ url_for('static', filename='menu.js') }}" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>
